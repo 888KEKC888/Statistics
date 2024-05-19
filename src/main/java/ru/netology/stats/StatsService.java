@@ -2,18 +2,17 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public String infoMonth(String[] month, int sales) {
+    public String infoMonth(String[] month, int sales) { //цикл сравнивает два массива, наименование месяца и номер месяца
         String wordMonth = null;
+        int numberMonth = 12;
 
-        for (int i = 0; i < sales; i++) {
-            if (sales == 1) {
+        while (numberMonth >= 1) {
 
-                wordMonth = month[i];
-            } else {
+            wordMonth = month[sales - 1];
+            numberMonth++;
 
-                wordMonth = month[i];
-            }
         }
+
         return wordMonth;
     }
 
@@ -65,9 +64,12 @@ public class StatsService {
 
     public int quantityMaxSales(int[] sales) {
         int quaMaxSales = 0;
+        int ASales = averageAllSales(sales);
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= averageAllSales(sales)) quaMaxSales++;
+        for (int sale : sales) {
+            if (sale >= ASales) {
+                quaMaxSales++;
+            }
         }
 
         return quaMaxSales;
@@ -75,9 +77,12 @@ public class StatsService {
 
     public int quantityMinSales(int[] sales) {
         int quaMinSales = 0;
+        int ASales = averageAllSales(sales);
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < averageAllSales(sales)) quaMinSales++;
+        for (int sale : sales) {
+            if (sale < ASales) {
+                quaMinSales++;
+            }
         }
 
         return quaMinSales;
