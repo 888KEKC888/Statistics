@@ -2,22 +2,7 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public String infoMonth(String[] month, int sales) { //цикл сравнивает два массива, наименование месяца и номер месяца
-        String wordMonth = null;
-        int numberMonth = 12;
-
-        while (numberMonth >= 1) {
-
-            wordMonth = month[sales - 1];
-            numberMonth++;
-
-        }
-
-        return wordMonth;
-    }
-
-
-    public int minSales(int[] sales) {
+    public long minSales(long[] sales) {
         int minMonth = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -29,7 +14,7 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int maxSales(int[] sales) {
+    public long maxSales(long[] sales) {
         int maxMonth = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -41,33 +26,33 @@ public class StatsService {
         return maxMonth - 1;
     }
 
-    public int sumAllSales(int[] sales) {
-        int sumSales = 0;
+    public long sumAllSales(long[] sales) {
+        long sumSales = 0;
 
-        for (int i : sales) {
+        for (long i : sales) {
             sumSales += i;
         }
 
         return sumSales;
     }
 
-    public int averageAllSales(int[] sales) {
-        int sumSales = 0;
+    public long averageAllSales(long[] sales) {
+        long sumSales = 0;
 
 
-        for (int i : sales) {
+        for (long i : sales) {
             sumSales += i;
         }
 
         return sumSales / 12;
     }
 
-    public int quantityMaxSales(int[] sales) {
+    public long quantityMaxSales(long[] sales) {
         int quaMaxSales = 0;
-        int ASales = averageAllSales(sales);
+        long allSales = averageAllSales(sales);
 
-        for (int sale : sales) {
-            if (sale >= ASales) {
+        for (long i : sales) {
+            if (i >= allSales) {
                 quaMaxSales++;
             }
         }
@@ -75,12 +60,12 @@ public class StatsService {
         return quaMaxSales;
     }
 
-    public int quantityMinSales(int[] sales) {
+    public long quantityMinSales(long[] sales) {
         int quaMinSales = 0;
-        int ASales = averageAllSales(sales);
+        long allSales = averageAllSales(sales);
 
-        for (int sale : sales) {
-            if (sale < ASales) {
+        for (long i : sales) {
+            if (i < allSales) {
                 quaMinSales++;
             }
         }

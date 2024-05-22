@@ -3,28 +3,22 @@ package ru.netology.stats;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
 public class StatsServiceTest {
-
 
     @Test
 
     public void testSumAllSallesNotNegativ() {
 
-        int[] sales = {
+        long[] sales = {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
         };
         StatsService service = new StatsService();
-        int sumSales = service.sumAllSales(sales);
+        long sumSales = service.sumAllSales(sales);
         System.out.println("Сумма всех продаж: " + sumSales);
 
-        boolean NotNegativ = false;
+        boolean notNegativ = sumSales >= 0;
 
-        if (sumSales >= 0) {
-            NotNegativ = true;
-        }
-        Assertions.assertEquals(NotNegativ, true);
-
+        Assertions.assertTrue(notNegativ);
 
     }
 
@@ -32,20 +26,16 @@ public class StatsServiceTest {
 
     public void testAverageAllSalesNotNegativ() {
 
-        int[] sales = {
+        long[] sales = {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
         };
         StatsService service = new StatsService();
-        int averageAllSales = service.averageAllSales(sales);
+        long averageAllSales = service.averageAllSales(sales);
         System.out.println("Средняя сумма всех продаж: " + averageAllSales);
 
-        boolean NotNegativ = false;
+        boolean notNegativ = averageAllSales >= 0;
 
-        if (averageAllSales >= 0) {
-            NotNegativ = true;
-        }
-        Assertions.assertEquals(NotNegativ, true);
-
+        Assertions.assertTrue(notNegativ);
 
     }
 
@@ -53,24 +43,16 @@ public class StatsServiceTest {
 
     public void testMaxSalesNotNegativ() {
 
-        int[] sales = {
+        long[] sales = {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
         };
-        String[] month = {
-                "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-        };
         StatsService service = new StatsService();
-        int maxSales = service.maxSales(sales);
-        String maxMonth = service.infoMonth(month, maxSales);
-        System.out.println("Максимальные продажи - Месяц: " + maxSales + " - " + maxMonth);
+        long maxSales = service.maxSales(sales);
+        System.out.println("Максимальные продажи - Месяц: " + maxSales);
 
-        boolean NotNegativ = false;
+        boolean notNegativ = maxSales >= 0;
 
-        if (maxSales >= 0) {
-            NotNegativ = true;
-        }
-        Assertions.assertEquals(NotNegativ, true);
-
+        Assertions.assertTrue(notNegativ);
 
     }
 
@@ -78,24 +60,16 @@ public class StatsServiceTest {
 
     public void testMinSalesNotNegativ() {
 
-        int[] sales = {
+        long[] sales = {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
         };
-        String[] month = {
-                "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-        };
         StatsService service = new StatsService();
-        int minSales = service.minSales(sales);
-        String minMonth = service.infoMonth(month, minSales);
-        System.out.println("Минимальные продажи - Месяц: " + minSales + " - " + minMonth);
+        long minSales = service.minSales(sales);
+        System.out.println("Минимальные продажи - Месяц: " + minSales);
 
-        boolean NotNegativ = false;
+        boolean notNegativ = minSales >= 0;
 
-        if (minSales >= 0) {
-            NotNegativ = true;
-        }
-        Assertions.assertEquals(NotNegativ, true);
-
+        Assertions.assertTrue(notNegativ);
 
     }
 
@@ -103,20 +77,16 @@ public class StatsServiceTest {
 
     public void testQuantiyyMinSalesNotNegativ() {
 
-        int[] sales = {
+        long[] sales = {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
         };
         StatsService service = new StatsService();
-        int quantiyyMin = service.quantityMinSales(sales);
+        long quantiyyMin = service.quantityMinSales(sales);
         System.out.println("Количество месяцев, в которых продажи были ниже среднего: " + quantiyyMin);
 
-        boolean NotNegativ = false;
+        boolean notNegativ = quantiyyMin >= 0;
 
-        if (quantiyyMin >= 0) {
-            NotNegativ = true;
-        }
-        Assertions.assertEquals(NotNegativ, true);
-
+        Assertions.assertTrue(notNegativ);
 
     }
 
@@ -124,20 +94,16 @@ public class StatsServiceTest {
 
     public void testQuantiyyMaxSalesNotNegativ() {
 
-        int[] sales = {
+        long[] sales = {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
         };
         StatsService service = new StatsService();
-        int quantiyyMax = service.quantityMaxSales(sales);
+        long quantiyyMax = service.quantityMaxSales(sales);
         System.out.println("Количество месяцев, в которых продажи были выше среднего: " + quantiyyMax);
 
-        boolean NotNegativ = false;
+        boolean notNegativ = quantiyyMax >= 0;
 
-        if (quantiyyMax >= 0) {
-            NotNegativ = true;
-        }
-        Assertions.assertEquals(NotNegativ, true);
-
+        Assertions.assertTrue(notNegativ);
 
     }
 
