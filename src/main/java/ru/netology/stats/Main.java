@@ -11,15 +11,15 @@ public class Main {
         long maxSales = service.maxSales(sales);
         long sumSales = service.sumAllSales(sales);
         long averageAllSales = service.averageAllSales(sales);
-        long quantiyyMax = service.quantityMaxSales(sales);
-        long quantiyyMin = service.quantityMinSales(sales);
+        long quantityMax = service.quantityMaxSales(sales);
+        long quantityMin = service.quantityMinSales(sales);
 
         System.out.println("Минимальные продажи - Месяц: " + minSales);
         System.out.println("Максимальные продажи - Месяц: " + maxSales);
         System.out.println("Сумма всех продаж: " + sumSales);
         System.out.println("Средняя сумма всех продаж: " + averageAllSales);
-        System.out.println("Количество месяцев, в которых продажи были выше среднего: " + quantiyyMax);
-        System.out.println("Количество месяцев, в которых продажи были ниже среднего: " + quantiyyMin);
+        System.out.println("Количество месяцев, в которых продажи были выше среднего: " + quantityMax);
+        System.out.println("Количество месяцев, в которых продажи были ниже среднего: " + quantityMin);
 
     }
 }
